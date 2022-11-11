@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Library_Management_New.Bootstrap
+namespace vPets_Services.Bootstrap
 {
 
 

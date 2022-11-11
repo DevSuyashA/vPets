@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" 
-    CodeBehind="viewbooks.aspx.cs" Inherits="Library_Management_New.viewbooks" %>
+    CodeBehind="viewbooks.aspx.cs" Inherits="vPets_Services.viewbooks" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 

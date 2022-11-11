@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Library_Management_New.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="vPets_Services.Global" Language="C#" %>

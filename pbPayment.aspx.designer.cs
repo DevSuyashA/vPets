@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Library_Management_New
+namespace vPets_Services
 {
 
 
