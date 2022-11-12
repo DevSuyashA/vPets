@@ -74,6 +74,7 @@
     <Content Include="Paym.aspx" />
     <Content Include="Payments.aspx" />
     <Content Include="pbPayment.aspx" />
+    <Content Include="pbProfile.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="vetManage.aspx" />
     <Content Include="petManage.aspx">
@@ -2183,6 +2184,7 @@
     <Content Include="userlogin.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="vetDash.aspx" />
+    <Content Include="vetProfile.aspx" />
     <Content Include="viewbook.aspx" />
     <Content Include="viewbooks.aspx" />
     <Content Include="Web.config" />
@@ -2237,6 +2239,13 @@
     </Compile>
     <Compile Include="pbPayment.aspx.designer.cs">
       <DependentUpon>pbPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pbProfile.aspx.cs">
+      <DependentUpon>pbProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pbProfile.aspx.designer.cs">
+      <DependentUpon>pbProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
@@ -2360,6 +2369,13 @@
     </Compile>
     <Compile Include="vetDash.aspx.designer.cs">
       <DependentUpon>vetDash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vetProfile.aspx.cs">
+      <DependentUpon>vetProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vetProfile.aspx.designer.cs">
+      <DependentUpon>vetProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="viewbook.aspx.cs">
       <DependentUpon>viewbook.aspx</DependentUpon>

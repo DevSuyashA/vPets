@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+               <%-- <div class="col-md-4">
                     <center>
                         <a href="WebForm1.aspx">
                             <img width="150px" src="imgs/sign-up.png" /><br />
@@ -68,7 +68,7 @@
                         <asp:Label ID="Label1" runat="server"></asp:Label>
                         <p class="text-center">Sign Up to Book Pet Buddies or Consult a Vet.</p>
                     </center>
-                </div>
+                </div>--%>
                 <div class="col-md-4">
                     <center>
                         <a href="Payments.aspx">
@@ -80,11 +80,12 @@
                         <p class="text-center">See your Payments</p>
                     </center>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" runat="server" Id="viewmyPayments">
                     <center>
                         <a href="pbPayment.aspx">
                             <img width="150px" src="imgs/money.png" /><br />
                             <br />
+                           
                             <h4 class="btn btn-dark">View Payments</h4>
 
                         </a>

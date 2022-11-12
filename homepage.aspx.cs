@@ -9,49 +9,52 @@ namespace vPets_Services
 {
     public partial class homepage : System.Web.UI.Page
     {
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-        //    try
-        //    {
-        //        if (IsPostBack)
-        //        {
+            try { 
+            
+                    if (Session["role"] != null)
+                    {
 
-        //            if (Session["role"].ToString() == "admin")
-        //            {
+                        if (Session["role"].ToString() == "admin")
+                        {
 
-        //                Button1.Enabled = false;
-        //                Button2.Enabled = false;
-        //                Button3.Enabled = false;
-        //            }
-        //            else if (Session["role"].ToString() == "vet")
-        //            {
-        //                Button1.Enabled = false;
-        //                Button2.Enabled = false;
-        //                Button3.Enabled = false;
+                            Button1.Enabled = false;
+                            Button2.Enabled = false;
+                            Button3.Enabled = false;
+                        }
+                        else if (Session["role"].ToString() == "vet")
+                        {
+                            Button1.Enabled = false;
+                            Button2.Enabled = false;
+                            Button3.Enabled = false;
 
-        //            }
-        //            else if (Session["role"].ToString() == "PetBuddy")
-        //            {
-        //                Button1.Enabled = false;
-        //                Button2.Enabled = false;
-        //                Button3.Enabled = false;
-        //            }
-        //            else
-        //            {
-        //                Button1.Enabled = true;
-        //                Button2.Enabled = true;
-        //                Button3.Enabled = true;
+                        }
+                        else if (Session["role"].ToString() == "PetBuddy")
+                        {
+                            Button1.Enabled = false;
+                            Button2.Enabled = false;
+                            Button3.Enabled = false;
+                        }
+                        else
+                        {
+                            Button1.Enabled = true;
+                            Button2.Enabled = true;
+                            Button3.Enabled = true;
+                        viewmyPayments.Visible = false;
 
-
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //}
+                        }
+                    }
+                
+            }
+            catch (Exception ex)
+            {
+                Button1.Enabled = true;
+                Button2.Enabled = true;
+                Button3.Enabled = true;
+            }
+        }
 
         protected void Button1_Click(object sender, EventArgs e)
         {

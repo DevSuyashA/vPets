@@ -69,6 +69,7 @@ namespace vPets_Services
                         {
                             Session["role"] = "vet";
                             Session["UserID"] = dr["vID"];
+                            Session["username"] = dr["Name"];
                             Response.Write("<script>alert('" + dr.GetValue(2).ToString() + "');</script>");
                             Response.Redirect("homepage.aspx");
                         }
@@ -91,6 +92,7 @@ namespace vPets_Services
                         {
                             Session["role"] = "PetBuddy";
                             Session["UserID"] = dr["pb_ID"];
+                            Session["username"] = dr["Name"];
                             Response.Write("<script>alert('" + dr.GetValue(1).ToString() + "');</script>");
                             Response.Redirect("homepage.aspx");
                         }
