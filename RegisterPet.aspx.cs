@@ -15,16 +15,20 @@ namespace vPets_Services
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserID"] == null)
+            if (!Page.IsPostBack)
             {
-                Response.Write("You are not logged in. Redirecting to login. . .");
-                Response.Redirect("userlogin.aspx");
-            }
-            if (Convert.ToInt32(Request.QueryString["id"]) != 0)
-            {
-                Button1.Text = "Edit";
-                getPetInfo();
+                //your code here...
+                if (Session["UserID"] == null)
+                {
+                    Response.Write("You are not logged in. Redirecting to login. . .");
+                    Response.Redirect("userlogin.aspx");
+                }
+                if (Convert.ToInt32(Request.QueryString["id"]) != 0)
+                {
+                    Button1.Text = "Edit";
+                    getPetInfo();
 
+                }
             }
 
         }
@@ -86,13 +90,13 @@ namespace vPets_Services
                 con.Close();
                 Response.Redirect("PetInfo.aspx");
             }
-            else if(Button1.Text == "Edit")
+            else if (Button1.Text == "Edit")
             {
-                int id =Convert.ToInt32( Request.QueryString["id"]);
+                int id = Convert.ToInt32(Request.QueryString["id"]);
                 //SqlCommand cmd = new SqlCommand("update pet set petName='hhaa',petType='Dog',Age=3,Gender='M',Breed='Randi' where pet_ID=9", con);
-                SqlCommand cmd = new SqlCommand("Update pet set petName='" + TextBox1.Text.Trim() + "',petType='"+type+"',Age='" + TextBox3.Text.Trim() + "',Gender='" + ddlGender.SelectedValue+"',Breed='"+ TextBox5.Text.Trim()+"' where pet_ID = '" + id + "'", con);
-                
-                
+                SqlCommand cmd = new SqlCommand("Update pet set petName='" + TextBox1.Text.Trim() + "',petType='" + type + "',Age='" + TextBox3.Text.Trim() + "',Gender='" + ddlGender.SelectedValue + "',Breed='" + TextBox5.Text.Trim() + "' where pet_ID = '" + id + "'", con);
+
+
 
                 cmd.ExecuteNonQuery();
                 Clear();

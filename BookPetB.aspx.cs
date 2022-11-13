@@ -25,8 +25,27 @@ namespace vPets_Services
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            DateTime dateTime = DateTime.Today;
+            DateTime txtDate = Convert.ToDateTime(TextBox2.Text);
+            double rnd = (txtDate - dateTime).TotalDays;
+            if ((txtDate - dateTime).TotalDays > 0)
             {
-                signUpNewMember();
+                DateTime starttime = Convert.ToDateTime(TextBox9.Text);
+                DateTime endtime = Convert.ToDateTime(TextBox1.Text);
+                rnd = (endtime - starttime).TotalHours;
+                if ((endtime - starttime).TotalHours >= 1)
+                {
+
+                    signUpNewMember();
+                }
+                else
+                {
+                    Response.Write("<script>alert('Book for minimum 1 hour')</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script>alert('Im not a time traveller! Choose Proper date 😊')</script>");
             }
         }
         void signUpNewMember()

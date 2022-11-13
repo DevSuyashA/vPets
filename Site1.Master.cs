@@ -13,86 +13,86 @@ namespace vPets_Services
         {
             try
             {
-               
-                    if (Session["role"] != null)
+
+                if (Session["role"] != null)
+                {
+
+                    if (Session["role"].ToString() == "user")
                     {
-
-                        if (Session["role"].ToString() == "user")
-                        {
-                            LinkButton1.Visible = false; // user login link button
-                            LinkButton2.Visible = false; // sign up link button
-                            LinkButton3.Visible = true; // logout link button
-                            LinkButton7.Visible = true; // hello user link button
-                            LinkButton7.Text = "Hello " + Session["username"].ToString();
+                        LinkButton1.Visible = false; // user login link button
+                        LinkButton2.Visible = false; // sign up link button
+                        LinkButton3.Visible = true; // logout link button
+                        LinkButton7.Visible = true; // hello user link button
+                        LinkButton7.Text = "Hello " + Session["username"].ToString();
 
 
-                            LinkButton6.Visible = false; // admin login link button
-                            LinkButton11.Visible = false; // author management link button
-                            LinkButton12.Visible = false; // publisher management link button
+                        LinkButton6.Visible = false; // admin login link button
+                        LinkButton11.Visible = false; // author management link button
+                        LinkButton12.Visible = false; // publisher management link button
 
-                        }
-                        else if (Session["role"].ToString() == "admin")
-                        {
-                            LinkButton1.Visible = false; // user login link button
-                            LinkButton2.Visible = false; // sign up link button
-
-                            LinkButton3.Visible = true; // logout link button
-                            LinkButton7.Visible = true; // hello user link button
-                            LinkButton7.Text = "Hello Admin";
-
-
-                            LinkButton6.Visible = false; // admin login link button
-                            LinkButton11.Visible = true; // author management link button
-                            LinkButton12.Visible = true; // publisher management link button
-
-                        }
-                        else if (Session["role"].ToString() == "vet")
-                        {
-                            LinkButton6.Visible = false;
-                            LinkButton1.Visible = false; // user login link button
-                            LinkButton2.Visible = false; // sign up link button
-
-                            LinkButton3.Visible = true; // logout link button
-                            LinkButton7.Visible = true; // hello user link button
-                            LinkButton7.Text = "Hello " + Session["username"].ToString();
-
-
-                            // admin login link button
-                            LinkButton11.Visible = false; // author management link button
-                            LinkButton12.Visible = false;
-                        }
-                        else if (Session["role"].ToString() == "PetBuddy")
-                        {
-                            LinkButton6.Visible = false;
-                            LinkButton1.Visible = false; // user login link button
-                            LinkButton2.Visible = false; // sign up link button
-
-                            LinkButton3.Visible = true; // logout link button
-                            LinkButton7.Visible = true; // hello user link button
-                            LinkButton7.Text = "Hello " + Session["username"].ToString();
-
-
-                            // admin login link button
-                            LinkButton11.Visible = false; // author management link button
-                            LinkButton12.Visible = false;
-                        }
-                        else
-                        {
-                            LinkButton1.Visible = true; // user login link button
-                            LinkButton2.Visible = true; // sign up link button
-
-                            LinkButton3.Visible = false; // logout link button
-                            LinkButton7.Visible = false; // hello user link button
-
-
-                            LinkButton6.Visible = true; // admin login link button
-                            LinkButton11.Visible = false; // author management link button
-                            LinkButton12.Visible = false; // publisher management link button
-
-
-                        }
                     }
-                
+                    else if (Session["role"].ToString() == "admin")
+                    {
+                        LinkButton1.Visible = false; // user login link button
+                        LinkButton2.Visible = false; // sign up link button
+
+                        LinkButton3.Visible = true; // logout link button
+                        LinkButton7.Visible = true; // hello user link button
+                        LinkButton7.Text = "Hello Admin";
+
+
+                        LinkButton6.Visible = false; // admin login link button
+                        LinkButton11.Visible = true; // author management link button
+                        LinkButton12.Visible = true; // publisher management link button
+
+                    }
+                    else if (Session["role"].ToString() == "vet")
+                    {
+                        LinkButton6.Visible = false;
+                        LinkButton1.Visible = false; // user login link button
+                        LinkButton2.Visible = false; // sign up link button
+
+                        LinkButton3.Visible = true; // logout link button
+                        LinkButton7.Visible = true; // hello user link button
+                        LinkButton7.Text = "Hello " + Session["username"].ToString();
+
+
+                        // admin login link button
+                        LinkButton11.Visible = false; // author management link button
+                        LinkButton12.Visible = false;
+                    }
+                    else if (Session["role"].ToString() == "PetBuddy")
+                    {
+                        LinkButton6.Visible = false;
+                        LinkButton1.Visible = false; // user login link button
+                        LinkButton2.Visible = false; // sign up link button
+
+                        LinkButton3.Visible = true; // logout link button
+                        LinkButton7.Visible = true; // hello user link button
+                        LinkButton7.Text = "Hello " + Session["username"].ToString();
+
+
+                        // admin login link button
+                        LinkButton11.Visible = false; // author management link button
+                        LinkButton12.Visible = false;
+                    }
+                    else
+                    {
+                        LinkButton1.Visible = true; // user login link button
+                        LinkButton2.Visible = true; // sign up link button
+
+                        LinkButton3.Visible = false; // logout link button
+                        LinkButton7.Visible = false; // hello user link button
+
+
+                        LinkButton6.Visible = true; // admin login link button
+                        LinkButton11.Visible = false; // author management link button
+                        LinkButton12.Visible = false; // publisher management link button
+
+
+                    }
+                }
+
             }
             catch (Exception ex)
             {
@@ -126,7 +126,25 @@ namespace vPets_Services
         }
         protected void LinkButton7_Click(object sender, EventArgs e)
         {
-            Response.Redirect("myProfile.aspx");
+            if (Session["role"] != null)
+            {
+                if (Session["role"].ToString() == "user")
+                {
+                    Response.Redirect("myProfile.aspx");
+                }
+                else if (Session["role"].ToString() == "vet")
+                {
+                    Response.Redirect("vetProfile.aspx");
+                }
+                else if (Session["role"].ToString() == "PetBuddy")
+                {
+                    Response.Redirect("pbProfile.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("userlogin.aspx");
+            }
         }
 
         protected void LinkButton8_Click(object sender, EventArgs e)

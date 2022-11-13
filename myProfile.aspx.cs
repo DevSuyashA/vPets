@@ -15,12 +15,6 @@ namespace vPets_Services
     {
         SqlCommand cmd = new SqlCommand();
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-        protected string username = "";
-        protected string pass = "";
-        protected string name = "";
-        protected string add = "";
-        protected string mobno = "";
-        protected string email = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserID"] == null)
@@ -30,7 +24,11 @@ namespace vPets_Services
             }
             else
             {
+                if (!Page.IsPostBack)
+                {
+                    
                 getInfo();
+                }
             }
         }
 
@@ -49,18 +47,16 @@ namespace vPets_Services
             DataTable dr = new DataTable();
             sda.Fill(dr);
             if (dr.Rows.Count == 1)
-            //SqlDataReader dr = cmd.ExecuteReader();
-            //if (dr.Read())
             {
 
-                //inputUsername.Text = dr.Rows[0]["c_username"].ToString();
-                //inputPass.Text = dr.Rows[0]["Password"].ToString();
-                //inputName.Text = dr.Rows[0]["Name"].ToString();
-                //inputLocation.Text = dr.Rows[0]["Address"].ToString();
-                //inputEmailAddress.Text = dr.Rows[0]["Email"].ToString();
-                //inputPhone.Text = dr.Rows[0]["Mobno"].ToString();
+                inputUsername.Text = dr.Rows[0]["c_username"].ToString();
+                inputPass.Text = dr.Rows[0]["Password"].ToString();
+                inputName.Text = dr.Rows[0]["Name"].ToString();
+                inputLocation.Text = dr.Rows[0]["Address"].ToString();
+                inputEmailAddress.Text = dr.Rows[0]["Email"].ToString();
+                inputPhone.Text = dr.Rows[0]["Mobno"].ToString();
             }
-            //dr.Close();
+            
         }
         protected void edit_Click(object sender, EventArgs e)
         {
@@ -81,17 +77,10 @@ namespace vPets_Services
             cmd.Parameters.AddWithValue("@Email", inputEmailAddress.Text.Trim());
             cmd.Parameters.AddWithValue("@Mobno", inputPhone.Text.Trim());
             cmd.ExecuteNonQuery();
-            clear();
+            Response.Write("<script>alert('Details updated succesfully')</script>");
+        
         }
 
-        private void clear()
-        {
-            inputEmailAddress.Text = String.Empty;
-            inputLocation.Text = String.Empty;
-            inputName.Text = String.Empty;
-            inputPass.Text = String.Empty;
-            inputPhone.Text = String.Empty;
-            inputUsername.Text = String.Empty;
-        }
+       
     }
 }

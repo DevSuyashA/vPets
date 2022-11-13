@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <div class="container">
+    <div class="container">
         <div class="row">
 
             <div class="col-sm-12">
@@ -22,14 +22,17 @@
                         <div class="card-body">
 
                             <div class="row">
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [payID], [toVet], [Amount], [TrTime] FROM [Payment]"></asp:SqlDataSource>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Amount], [TrTime], [Name] FROM [Payment] WHERE ([toVet] = @toVet)">
+                                    <SelectParameters>
+                                        <asp:Parameter DefaultValue="0" Name="toVet" Type="Int32" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
                                 <div class="col">
-                                    <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="payID" DataSourceID="SqlDataSource1">
+                                    <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
                                         <Columns>
-                                            <asp:BoundField DataField="payID" HeaderText="payID" ReadOnly="True" SortExpression="payID" InsertVisible="False"></asp:BoundField>
-                                            <asp:BoundField DataField="toVet" HeaderText="toVet" SortExpression="toVet" />
                                             <asp:BoundField DataField="Amount" HeaderText="Amount" SortExpression="Amount" />
                                             <asp:BoundField DataField="TrTime" HeaderText="TrTime" SortExpression="TrTime" />
+                                            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"></asp:BoundField>
                                         </Columns>
                                     </asp:GridView>
                                 </div>

@@ -42,6 +42,15 @@ namespace vPets_Services
         protected global::System.Web.UI.WebControls.Repeater rUser;
 
         /// <summary>
+        /// rClientCom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rClientCom;
+
+        /// <summary>
         /// Vet control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace vPets_Services
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rVet;
+
+        /// <summary>
+        /// rVetCompletedBookings control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rVetCompletedBookings;
 
         /// <summary>
         /// petBuddy control.
