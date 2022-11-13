@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="pbProfile.aspx.cs" Inherits="Library_Management_New.pbProfile" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="container-xl px-4 mt-4">
+    <div class="container-xl px-4 mt-4">
 
         <hr class="mt-0 mb-4">
         <div class="row">
@@ -13,10 +14,6 @@
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
                         <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                        <!-- Profile picture help block-->
-                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                        <!-- Profile picture upload button-->
-                        <button class="btn btn-primary" type="button">Upload new image</button>
                     </div>
                 </div>
             </div>
@@ -69,7 +66,7 @@
                             <!-- Save changes button-->
                             <div class="col-md-6">
                                 <br />
-                                <asp:Button runat="server" Text="Edit" class="btn btn-primary" type="button" ID="edit" Onclick="edit_Click" />
+                                <asp:Button runat="server" Text="Edit" class="btn btn-primary" type="button" ID="edit" OnClick="edit_Click" />
                             </div>
 
 
@@ -79,4 +76,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </asp:Content>

@@ -80,7 +80,7 @@
                         <p class="text-center">See your Payments</p>
                     </center>
                 </div>
-                <div class="col-md-4" runat="server" Id="viewmyPayments">
+               <%-- <div class="col-md-4" runat="server" Id="viewmyPayments">
                     <center>
                         <a href="pbPayment.aspx">
                             <img width="150px" src="imgs/money.png" /><br />
@@ -91,7 +91,7 @@
                         </a>
                         <p class="text-center">Check Payments for your Service</p>
                     </center>
-                </div>
+                </div>--%>
 
                 <div class="col-md-4">
                     <center>

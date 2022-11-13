@@ -49,12 +49,17 @@ namespace vPets_Services
         {
             txtUsername.Text = "";
             txtPassword.Text = "";
-            
+
             txtNum.Text = "";
             txtName.Text = "";
             txtEmail.Text = "";
             txtExp.Text = "";
-            
+
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
 
         }
     }

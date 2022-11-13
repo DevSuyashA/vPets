@@ -42,7 +42,7 @@ namespace vPets_Services
                             Button1.Enabled = true;
                             Button2.Enabled = true;
                             Button3.Enabled = true;
-                        viewmyPayments.Visible = false;
+                        //viewmyPayments.Visible = false;
 
                         }
                     }

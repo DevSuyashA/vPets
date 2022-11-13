@@ -42,6 +42,15 @@ namespace vPets_Services
         protected global::System.Web.UI.WebControls.TextBox txtUsername;
 
         /// <summary>
+        /// txtPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+
+        /// <summary>
         /// ddlGender control.
         /// </summary>
         /// <remarks>
@@ -69,15 +78,6 @@ namespace vPets_Services
         protected global::System.Web.UI.WebControls.TextBox txtExp;
 
         /// <summary>
-        /// txtPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
-
-        /// <summary>
         /// Button2 control.
         /// </summary>
         /// <remarks>
@@ -85,6 +85,15 @@ namespace vPets_Services
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
+
+        /// <summary>
+        /// Button3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
         /// GridView1 control.
